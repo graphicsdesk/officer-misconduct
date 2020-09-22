@@ -4,7 +4,11 @@
   "private": true,
   "scripts": {
     "start": "parcel src/index.html --global script",
-    "preinstall": "npx npm-force-resolutions"
+    "build": "parcel src/index.html --global script",
+    "build": "parcel build src/index.html --global script --public-url https://spectator-static-assets.s3.amazonaws.com/officer-misconduct --no-content-hash --no-source-maps",
+
+    "preinstall": "npx npm-force-resolutions",
+    "postinstall": "patch-package"
   },
   "devDependencies": {
     "cssnano": "^4.1.10",
